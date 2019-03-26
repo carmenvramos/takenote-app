@@ -5,34 +5,40 @@
 
    input {
     display: block;
+    font-size: 1.25em;
     align-self: left;
     width: 50%;
-    max-width: 250px;
+    max-width: 500px;
     margin: auto;
-    padding: 0.4em;
+    padding: 0.6em;
+    border: 3mm ridge rgba(52, 21, 114, 0.618);
   }
 
    textarea {
     display: block;
+    font-size: 1.25em;
     width: 100%;
-    max-width: 500px;
+    max-width: 470px;
     height: 100vh;
-    max-height: 250px;
+    max-height: 500px;
     margin: 0.5em;
     padding: 0.4em;
+    border: .5rem solid;
+    border-color: #B16FB1;
+
   }
 
    button {
     display: block;
     width: 100%;
-    margin: 0.5em;
-    padding: 0.4em;
-    border: 0;
+    margin: 0.6em;
+    padding: 0.5em;
+    border-radius: 10px;
 
-     background-color: #2D1050;
+    background-color: #2D1050;
     color: #E9E2E4;
-
-     font-weight: 700;
+    font-size: 1em;
+    font-weight: 700;
   }
 }
   
