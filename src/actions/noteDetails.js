@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { addNote } from '../services/notes';
+import { addNote, getNote } from '../services/notes';
 
 export const [
   createNote,
@@ -20,3 +20,12 @@ export const updateBody = body => ({
   type: UPDATE_BODY,
   payload: body
 });
+
+export const [
+  fetchNoteDetails,
+  FETCH_NOTE_DETAILS,
+  FETCH_NOTE_DETAILS_PENDING,
+  FETCH_NOTE_DETAILS_FULFILLED,
+  FETCH_NOTE_DETAILS_ERROR
+] = createAction('FETCH_NOTE_DETAILS', getNote);
+  

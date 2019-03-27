@@ -11,3 +11,8 @@
   background-repeat: no-repeat, repeat;
   background-size: cover;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -10,7 +10,7 @@
     padding: 1em;
     border-radius: 0.2em;
 
-    background-color: rgba(52, 21, 114);
+    background-color: rgba(52, 21, 114, 0.75);
     color:#B16FB1;
 
      transition: background-color 0.2s linear;
