@@ -1,4 +1,4 @@
-import { CREATE_NOTE, CREATE_NOTE_PENDING, CREATE_NOTE_ERROR, UPDATE_TITLE, UPDATE_BODY, FETCH_NOTE_DETAILS, FETCH_NOTE_DETAILS_PENDING, FETCH_NOTE_DETAILS_ERROR } from '../actions/noteDetails';
+import { CREATE_NOTE, CREATE_NOTE_PENDING, CREATE_NOTE_ERROR, UPDATE_TITLE, UPDATE_BODY, FETCH_NOTE_DETAILS, FETCH_NOTE_DETAILS_PENDING, FETCH_NOTE_DETAILS_ERROR, CLEAR_DETAILS } from '../actions/noteDetails';
 
 const initialState = {
   loading: false,
@@ -51,6 +51,10 @@ export default function reducer(state = initialState, action) {
         ...state,
         loading: false,
         error: action.payload
+      };  
+    case CLEAR_DETAILS:
+      return {
+        ...initialState
       };  
     default:
       return state;

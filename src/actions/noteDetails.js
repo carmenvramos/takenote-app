@@ -29,3 +29,7 @@ export const [
   FETCH_NOTE_DETAILS_ERROR
 ] = createAction('FETCH_NOTE_DETAILS', getNote);
   
+export const CLEAR_DETAILS = 'CLEAR_DETAILS';
+export const clearDetails = () => ({
+  type: CLEAR_DETAILS
+});
