@@ -51,24 +51,8 @@
     margin: 1em;
     border-radius: 0.4em;
 
-     background-color: #A91310;
+    background-color: #A91310;
     color: #E9E2E4;
-  }
-
-   .spinner {
-    display: block;
-
-     animation: spinnerAnimation 1.5s ease-in-out infinite alternate;
-  }
-
-   @keyframes spinnerAnimation {
-    from {
-      transform: rotate(0deg);
-    }
-
-     to {
-      transform: rotate(360deg);
-    }
   }
 }	
  

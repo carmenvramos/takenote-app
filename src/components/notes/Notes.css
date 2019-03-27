@@ -1,0 +1,23 @@
+.Notes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+   list-style-type: none;
+
+   li {
+    margin: 0.4em;
+    padding: 1em;
+    border-radius: 0.2em;
+
+    background-color: rgba(52, 21, 114);
+    color:#B16FB1;
+
+     transition: background-color 0.2s linear;
+
+     &:hover {
+      background-color: rgba(52,21,114, 0.3);
+    }
+  }
+}
+  

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './NoteForm.css';
-import { FaHourglass } from 'react-icons/fa';
+import NoteSpinner from './NoteSpinner';
 
 function NotesForm({ title, body, createNote, titleChange, bodyChange, error, loading }) {
   return (
@@ -21,8 +21,9 @@ function NotesForm({ title, body, createNote, titleChange, bodyChange, error, lo
         onChange={bodyChange}>
       </textarea>
       <button disabled={loading}>
-        <span className={loading ? styles.spinner : ''}>{loading ? <FaHourglass /> : 'Create'}
-        </span>
+        <NoteSpinner loading={loading}>
+          <span>Create</span>
+        </NoteSpinner>  
       </button>
     </form>
   );
