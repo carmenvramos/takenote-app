@@ -8,7 +8,7 @@ import {
 
 import Home from '../../pages/Home';
 import NoteDetailsPage from '../../pages/NoteDetailsPage';
-import { Header } from '../header/Header';
+import  Header  from '../header/Header';
 
 
 export default function App() {

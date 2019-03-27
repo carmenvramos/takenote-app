@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteForm tests matches a snapshot 1`] = `
+<form
+  className="NotesForm"
+  onSubmit={[Function]}
+>
+  <input
+    name="title"
+    onChange={[MockFunction]}
+    placeholder="Note Title"
+    type="text"
+    value="Note Title"
+  />
+  <textarea
+    name="body"
+    onChange={[MockFunction]}
+    value="Note Body"
+  />
+  <button
+    disabled={false}
+  >
+    <NoteSpinner
+      loading={false}
+    >
+      <span>
+        Create
+      </span>
+    </NoteSpinner>
+  </button>
+</form>
+`;

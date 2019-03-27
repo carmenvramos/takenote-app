@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note tests matches a snapshot 1`] = `
+<Fragment>
+  <h2>
+    Note Title
+  </h2>
+  <textarea
+    disabled={true}
+    value="Note Body"
+  />
+</Fragment>
+`;
