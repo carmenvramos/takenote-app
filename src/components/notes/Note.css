@@ -2,13 +2,13 @@
   display: block;
   margin: auto;
   background-color: #E9E2E4;
-
+  text-align: center;
   h2 {
     padding: 0.4em 0;
     color: #B16FB1;
   }
 
-  textarea {
+  p {
     line-height: 1.5em;
   }
 }  

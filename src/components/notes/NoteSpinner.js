@@ -16,7 +16,7 @@ function NoteSpinner({ loading, children }) {
 }
 
 NoteSpinner.propTypes = {
-  loading: PropTypes.bool.isRequired,
+  loading: PropTypes.bool,
   children: PropTypes.node.isRequired
 };
 

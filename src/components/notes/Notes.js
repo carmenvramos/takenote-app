@@ -10,7 +10,7 @@ function Notes({ notes }) {
       <li key={note._id}>
         <NoteSpinner loading={note.isPending}>
           <Link to={`/notes/${note._id}`}>
-            <h2>{note.title}</h2>
+            <h3>{note.title}</h3>
             <p>{note.body}</p>
           </Link>
         </NoteSpinner>

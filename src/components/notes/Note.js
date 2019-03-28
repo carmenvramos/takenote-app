@@ -8,7 +8,7 @@ function Note({ id, title, body }) {
   return (
     <article className={styles.Note}>
       <h2>{title}</h2>
-      <pre>{body}</pre>
+      <p>{body}</p>
       <Link to={`/notes/${id}/edit`}>
         <FaPen />
       </Link>
