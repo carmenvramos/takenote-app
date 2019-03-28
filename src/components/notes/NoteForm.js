@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './NoteForm.css';
 import NoteSpinner from './NoteSpinner';
 
-function NotesForm({ title, body, handleSubmit, titleChange, bodyChange, error, loading }) {
+function NotesForm({ title, body, handleSubmit, submitNote, titleChange, bodyChange, error, loading }) {
   return (
     <form className={styles.NotesForm} onSubmit={handleSubmit.bind(null, title, body)}>
       {error && <section className={styles.error}>
@@ -22,7 +22,7 @@ function NotesForm({ title, body, handleSubmit, titleChange, bodyChange, error, 
       </textarea>
       <button disabled={loading}>
         <NoteSpinner loading={loading}>
-          <span>Create</span>
+          <span>{submitNote}</span>
         </NoteSpinner>  
       </button>
     </form>
@@ -30,6 +30,7 @@ function NotesForm({ title, body, handleSubmit, titleChange, bodyChange, error, 
 }
 
 NotesForm.propTypes = {
+  submitNote: PropTypes.string,
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   handleSubmit: PropTypes.func.isRequired,
@@ -37,6 +38,10 @@ NotesForm.propTypes = {
   bodyChange: PropTypes.func.isRequired,
   error: PropTypes.string,
   loading: PropTypes.bool.isRequired
+};
+
+NotesForm.defaultProps = {
+  submitNote: 'Create'
 };
 
 export default NotesForm;
