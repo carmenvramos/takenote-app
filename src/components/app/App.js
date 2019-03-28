@@ -9,6 +9,7 @@ import {
 import Home from '../../pages/Home';
 import NoteDetailsPage from '../../pages/NoteDetailsPage';
 import  Header  from '../header/Header';
+import EditNotePage from '../../pages/EditNotePage';
 
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/notes/:id" component={NoteDetailsPage} />
+        <Route exact path="/notes/:id/edit" component={EditNotePage} />
       </Switch>
      
     </>

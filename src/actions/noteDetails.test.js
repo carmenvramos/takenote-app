@@ -14,13 +14,19 @@ import {
   FETCH_NOTE_DETAILS_PENDING,
   FETCH_NOTE_DETAILS_FULFILLED,
   FETCH_NOTE_DETAILS_ERROR,
-  fetchNoteDetails
+  fetchNoteDetails,
+  updateNote,
+  UPDATE_NOTE,
+  UPDATE_NOTE_PENDING,
+  UPDATE_NOTE_FULFILLED,
+  UPDATE_NOTE_ERROR
   
 } from './noteDetails';
 
 jest.mock('../services/notes.js', () => ({
   addNote: () => Promise.resolve(),
-  getNote: () => Promise.resolve()
+  getNote: () => Promise.resolve(),
+  editNote: () => Promise.resolve()
 }));
 
 describe('noteDetails action creators', () => {
@@ -31,6 +37,17 @@ describe('noteDetails action creators', () => {
       pendingType: CREATE_NOTE_PENDING,
       fulfilledType: CREATE_NOTE_FULFILLED,
       rejectedType: CREATE_NOTE_ERROR,
+      payload: expect.any(Promise)
+    });
+  });
+
+  it('creates a UPDATE_NOTE action', () => {
+    const action = updateNote({ title: 'Note Title', body: 'Note Body' });
+    expect(action).toEqual({
+      type: UPDATE_NOTE,
+      pendingType: UPDATE_NOTE_PENDING,
+      fulfilledType: UPDATE_NOTE_FULFILLED,
+      rejectedType: UPDATE_NOTE_ERROR,
       payload: expect.any(Promise)
     });
   });

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import styles from './NoteForm.css';
 import NoteSpinner from './NoteSpinner';
 
-function NotesForm({ title, body, createNote, titleChange, bodyChange, error, loading }) {
+function NotesForm({ title, body, handleSubmit, titleChange, bodyChange, error, loading }) {
   return (
-    <form className={styles.NotesForm} onSubmit={createNote.bind(null, title, body)}>
+    <form className={styles.NotesForm} onSubmit={handleSubmit.bind(null, title, body)}>
       {error && <section className={styles.error}>
         <p>Error: {error}</p>
       </section>}
@@ -32,7 +32,7 @@ function NotesForm({ title, body, createNote, titleChange, bodyChange, error, lo
 NotesForm.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-  createNote: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
   titleChange: PropTypes.func.isRequired,
   bodyChange: PropTypes.func.isRequired,
   error: PropTypes.string,

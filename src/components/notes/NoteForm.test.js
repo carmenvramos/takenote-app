@@ -13,7 +13,7 @@ describe('NoteForm tests', () => {
         body="Note Body"
         error={null}
         loading={false}
-        createNote={createNote}
+        handleSubmit={createNote}
         titleChange={jest.fn()}
         bodyChange={jest.fn()}
       />
