@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import NoteForm from '../../components/notes/NoteForm';
-import { createNote, updateTitle, updateBody } from '../../actions/noteDetails';
-import { getTitle, getBody, getNoteDetailsError, isNoteDetailsLoading } from '../../selectors/noteDetails';
+import { createNote, updateTitle, updateBody } from '../../actions/noteForm';
+import { getTitle, getBody, getNoteFormError, isNoteFormLoading } from '../../selectors/noteForm';
 
 const mapStateToProps = state => ({
-  error: getNoteDetailsError(state),
-  loading: isNoteDetailsLoading(state),
+  error: getNoteFormError(state),
+  loading: isNoteFormLoading(state),
   title: getTitle(state),
   body: getBody(state)
 });

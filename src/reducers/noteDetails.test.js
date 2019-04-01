@@ -1,16 +1,13 @@
 import reducer from './noteDetails';
 import {
-  CREATE_NOTE_ERROR,
-  CREATE_NOTE_PENDING,
-  CREATE_NOTE,
-  UPDATE_TITLE,
-  UPDATE_BODY,
   FETCH_NOTE_DETAILS,
   FETCH_NOTE_DETAILS_PENDING,
   FETCH_NOTE_DETAILS_ERROR,
-  CLEAR_DETAILS,
-  UPDATE_NOTE
+  CLEAR_DETAILS
 } from '../actions/noteDetails';
+
+jest.mock('../services/auth.js');
+jest.mock('../services/notes.js');
 
 describe('noteDetails reducer', () => {
   let state;
@@ -20,68 +17,8 @@ describe('noteDetails reducer', () => {
       loading: false,
       error: null,
       title: 'Note Title',
-      body: 'Text of the note body'
+      body: 'Fetched note body'
     };
-  });
-
-  it('handles the CREATE_NOTE action', () => {
-    const updatedState = reducer(state, {
-      type: CREATE_NOTE,
-    });
-
-    expect(updatedState).toEqual({
-      loading: false,
-      error: null,
-      title: '',
-      body: ''
-    });
-  });
-
-  it('handles the CREATE_NOTE_PENDING action', () => {
-    const updatedState = reducer(state, {
-      type: CREATE_NOTE_PENDING
-    });
-
-    expect(updatedState).toEqual({
-      ...state,
-      loading: true
-    });
-  });
-
-  it('handles the CREATE_NOTE_ERROR', () => {
-    const updatedState = reducer(state, {
-      type: CREATE_NOTE_ERROR,
-      payload: 'error'
-    });
-
-    expect(updatedState).toEqual({
-      ...state,
-      error: 'error'
-    });
-  });
-
-  it('handles the UPDATE_TITLE', () => {
-    const updatedState = reducer(state, {
-      type: UPDATE_TITLE,
-      payload: 'Note Title'
-    });
-
-    expect(updatedState).toEqual({
-      ...state,
-      title: 'Note Title'
-    });
-  });
-
-  it('handles the UPDATE_TITLE', () => {
-    const updatedState = reducer(state, {
-      type: UPDATE_BODY,
-      payload: 'Text of the note body'
-    });
-
-    expect(updatedState).toEqual({
-      ...state,
-      body: 'Text of the note body'
-    });
   });
 
   it('handles the FETCH_NOTE_DETAILS', () => {
@@ -92,8 +29,10 @@ describe('noteDetails reducer', () => {
 
     expect(updatedState).toEqual({
       ...state,
-      title: 'Note Title',
-      body: 'Fetched note body',
+      note: {
+        title: 'Note Title',
+        body: 'Fetched note body'
+      },
       loading: false
     });
   });
@@ -127,27 +66,10 @@ describe('noteDetails reducer', () => {
     });
 
     expect(updatedState).toEqual({
-      title: '',
-      body: '',
+      note: {},
       error: null,
       loading: false
     });
   });
 
-  it('handles the UPDATE_NOTE action', () => {
-    const updatedState = reducer(state, {
-      type: UPDATE_NOTE,
-      payload: {
-        title: 'Updated Title',
-        body: 'Updated Body'
-      }
-    });
-
-    expect(updatedState).toEqual({
-      loading: false,
-      error: null,
-      title: 'Updated Title',
-      body: 'Updated Body'
-    });
-  });
 });

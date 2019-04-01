@@ -11,6 +11,7 @@ function Notes({ notes }) {
         <NoteSpinner loading={note.isPending}>
           <Link to={`/notes/${note._id}`}>
             <h3>{note.title}</h3>
+            <h5>by {note.author}</h5>
             <p>{note.body}</p>
           </Link>
         </NoteSpinner>

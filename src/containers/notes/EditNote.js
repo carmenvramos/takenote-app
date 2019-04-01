@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getBody, getTitle, getNoteDetailsError, isNoteDetailsLoading } from '../../selectors/noteDetails';
-import { updateTitle, updateBody, updateNote, fetchNoteDetails, clearDetails } from '../../actions/noteDetails';
+import { getBody, getTitle, getNoteFormError, isNoteFormLoading } from '../../selectors/noteForm';
+import { updateTitle, updateBody, updateNote, clearForm } from '../../actions/noteForm';
+import { fetchNoteDetails, clearDetails } from '../../actions/noteDetails';
 import NotesForm from '../../components/notes/NoteForm';
 import { withFetch } from '../../components/withFetch';
 
@@ -9,8 +10,8 @@ const mapStateToProps = state => ({
   submitNote: 'Edit',
   title: getTitle(state),
   body: getBody(state),
-  error: getNoteDetailsError(state),
-  loading: isNoteDetailsLoading(state)
+  error: getNoteFormError(state),
+  loading: isNoteFormLoading(state)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -18,6 +19,7 @@ const mapDispatchToProps = (dispatch, props) => ({
     dispatch(fetchNoteDetails(props.match.params.id));
   },
   clear() {
+    dispatch(clearForm());
     dispatch(clearDetails());
   },
   handleSubmit(title, body, event) {

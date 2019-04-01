@@ -4,6 +4,8 @@ jest.mock('../services/notes.js', () => ({
   getNotes: () => Promise.resolve()
 }));
 
+jest.mock('../services/auth.js');
+
 describe('notes action creators', () => {
   it('creates a FETCH_NOTES action', () => {
     const action = fetchNotes();

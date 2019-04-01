@@ -7,12 +7,16 @@ exports[`Note tests matches a snapshot 1`] = `
   <h2>
     Note Title
   </h2>
+  <h5>
+    by 
+    test.user
+  </h5>
   <p>
     Note Body
   </p>
   <Link
     replace={false}
-    to="/notes/01/edit"
+    to="/notes/11/edit"
   >
     <FaPen />
   </Link>

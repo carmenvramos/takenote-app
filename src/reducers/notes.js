@@ -1,5 +1,5 @@
 import { FETCH_NOTES } from '../actions/notes';
-import { CREATE_NOTE, CREATE_NOTE_PENDING, CREATE_NOTE_FULFILLED } from '../actions/noteDetails';
+import { CREATE_NOTE, CREATE_NOTE_PENDING, CREATE_NOTE_FULFILLED } from '../actions/noteForm';
 
 const initialState = {
   list: [],
@@ -10,6 +10,11 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
+    case FETCH_NOTES:
+      return {
+        ...state,
+        list: action.payload
+      };
     case CREATE_NOTE:
       return {
         ...state,
