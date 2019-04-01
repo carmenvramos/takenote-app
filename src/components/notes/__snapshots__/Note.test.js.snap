@@ -7,9 +7,9 @@ exports[`Note tests matches a snapshot 1`] = `
   <h2>
     Note Title
   </h2>
-  <pre>
+  <p>
     Note Body
-  </pre>
+  </p>
   <Link
     replace={false}
     to="/notes/01/edit"
