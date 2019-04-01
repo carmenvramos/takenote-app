@@ -9,7 +9,7 @@ function Note({ note }) {
   return (
     <article className={styles.Note}>
       <h2>{title}</h2>
-      <h5>by {author}</h5>
+      <h5>by {author.nickname}</h5>
       <p>{body}</p>
       <Link to={`/notes/${_id}/edit`}>
         <FaPen />
