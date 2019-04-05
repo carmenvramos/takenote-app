@@ -31,11 +31,6 @@ export default function reducer(state = initialState, action) {
         ...state,
         pendingNote: false
       };
-    case FETCH_NOTES:
-      return {
-        ...state,
-        list: action.payload
-      };
     default:
       return state;
   }

@@ -9,7 +9,6 @@ exports[`Note tests matches a snapshot 1`] = `
   </h2>
   <h5>
     by 
-    test.user
   </h5>
   <p>
     Note Body
